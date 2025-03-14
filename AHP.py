@@ -44,12 +44,12 @@ def read_file():
     file_excel = file_excel.replace("\\", "/")
     try:
         df = pd.read_excel(file_excel, index_col=0)
+        matrix = df.map(lambda x: eval(str(x))).values
     except Exception as e:
         print("Có lỗi trong quá trình đọc tệp excel. Hãy kiểm tra lại tệp!")
         print("Lỗi: ", e)
         return
     try:
-        matrix = df.map(lambda x: eval(str(x))).values
         total_matrix = total_column(matrix)
         div_total_matrix = div_column_with_total_sum(matrix, total_matrix)
         criteria_weights = avg_row(div_total_matrix)
