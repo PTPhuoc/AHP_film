@@ -67,6 +67,7 @@ def read_file():
     except Exception as e:
         print("Có lỗi trong tính toán. Hãy kiểm tra lại tệp excel!")
         print("Lỗi: ", e)
+        return
 
 
 path = "F:/my_project/python/AHP/Matrix.xlsx"
