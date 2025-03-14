@@ -40,8 +40,10 @@ def get_ri(n):
 
 
 def read_file():
+    file_excel = input("Nhập đường dẩn tệp excel: ")
+    file_excel = file_excel.replace("\\", "/")
     try:
-        df = pd.read_excel("F:/my_project/python/AHP/Matrix.xlsx", index_col=0)
+        df = pd.read_excel(file_excel, index_col=0)
     except Exception as e:
         print("Có lỗi trong quá trình đọc tệp excel. Hãy kiểm tra lại tệp!")
         print("Lỗi: ", e)
@@ -67,4 +69,5 @@ def read_file():
         print("Lỗi: ", e)
 
 
+path = "F:/my_project/python/AHP/Matrix.xlsx"
 read_file()
